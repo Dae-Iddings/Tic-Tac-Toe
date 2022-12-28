@@ -20,4 +20,9 @@ const gameBoard = (() => {
         spot9
     };
 })();
-console.log(gameBoard.spot1('x'))
+const player = (playerName) => {
+    let newName = playerName;
+    return {newName}
+}
+const dae = player('Dae');
+console.log(dae.newName) 
