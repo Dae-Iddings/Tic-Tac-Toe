@@ -1,0 +1,8 @@
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(125px, 175px));
+    grid-template-rows: repeat(3, minmax(125px, 175px));
+}
+.spot {
+    border: 2px solid black;
+}
