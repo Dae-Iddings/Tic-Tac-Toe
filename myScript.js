@@ -22,12 +22,12 @@ const gameBoard = (() => {
     
      
 })();
-const player = (playerName) => {
+const player = (playerName, marker) => {
     let newName = playerName;
-    let playerMarker = 'x';
+    let playerMarker = marker;
     return {newName, playerMarker}
 }
-  function renderGameBoard()  {
+  const renderGameBoard = (() => {
         const renderSpot1 = document.querySelector('#spot1');
         const renderSpot2 = document.querySelector('#spot2');
         const renderSpot3 = document.querySelector('#spot3');
@@ -46,5 +46,4 @@ const player = (playerName) => {
         renderSpot7.textContent = gameBoard.spot7('x');
         renderSpot8.textContent = gameBoard.spot8('o');
         renderSpot9.textContent = gameBoard.spot9('x');
-    }
-    renderGameBoard();  
+    })(); 
