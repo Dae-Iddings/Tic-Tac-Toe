@@ -1,16 +1,19 @@
 * {
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
+
 .flexContainer {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 #gameBoard {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 150px));
     grid-template-rows: repeat(3, minmax(100px, 150px));
 }
+
 .spot {
     border: 2px solid white;
     background-color: #df9fbf;
