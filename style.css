@@ -24,6 +24,7 @@
     font-size: 100px;
     font-weight: bolder;
 }
+
 .newGame {
     background-color: #a13668;
     color: black;
@@ -32,24 +33,31 @@
     font-size: larger;
     text-align: center;
     position: absolute;
-    left: 37%;
-    bottom: 15%;
+   margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 45px;
+    text-align: center;
     display: none;
 }
+
 .formDiv {
-margin-top: 25px;
+    margin-top: 25px;
 }
+
 #submitButton {
     background-color: #d582a8;
     padding: 10px;
     font-size: large;
 }
+
 input {
     background-color: #f5e0ea;
     margin-top: 10px;
     height: 25px;
     width: 250px;
 }
+
 .formHead {
     padding-top: 25px;
 }
