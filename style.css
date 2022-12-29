@@ -1,8 +1,23 @@
+* {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+.flexContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 #gameBoard {
     display: grid;
-    grid-template-columns: repeat(3, minmax(125px, 175px));
-    grid-template-rows: repeat(3, minmax(125px, 175px));
+    grid-template-columns: repeat(3, minmax(100px, 150px));
+    grid-template-rows: repeat(3, minmax(100px, 150px));
 }
 .spot {
-    border: 2px solid black;
+    border: 2px solid white;
+    background-color: #df9fbf;
+    color: #a13668;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-weight: bolder;
 }
