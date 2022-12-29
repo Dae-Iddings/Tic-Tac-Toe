@@ -38,6 +38,7 @@ const renderGameBoard = (() => {
     const spot8 = document.querySelector('#spot8');
     const spot9 = document.querySelector('#spot9');
     const newGameButton = document.querySelector('#newGameButton');
+    const form = document.querySelector('.newGame')
     spot1.addEventListener('click', () => {
         if (!spot1.textContent) {
             spot1.textContent = gameBoard.spot1('');
@@ -83,5 +84,8 @@ const renderGameBoard = (() => {
             spot9.textContent = gameBoard.spot9('');
         }
     });
+    newGameButton.addEventListener('click', () => {
+        form.style.display = 'block'
+    })
 })();
 
