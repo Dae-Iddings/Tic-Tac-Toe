@@ -24,3 +24,28 @@
     font-size: 100px;
     font-weight: bolder;
 }
+.newGame {
+    background-color: #a13668;
+    color: black;
+    width: 350px;
+    height: 350px;
+    font-size: larger;
+    text-align: center;
+}
+.formDiv {
+margin-top: 25px;
+}
+#submitButton {
+    background-color: #d582a8;
+    padding: 10px;
+    font-size: large;
+}
+input {
+    background-color: #f5e0ea;
+    margin-top: 10px;
+    height: 25px;
+    width: 250px;
+}
+.formHead {
+    padding-top: 25px;
+}
