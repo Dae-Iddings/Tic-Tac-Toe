@@ -16,6 +16,7 @@ const renderGameBoard = (() => {
      players.push(playerOneName)
      players.push(playerTwoName)
      console.log(playerOneName);
+     form.style.display = 'none'
      })
   
     function isEven(n) {
