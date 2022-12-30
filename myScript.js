@@ -26,15 +26,18 @@ const renderGameBoard = (() => {
     const spot9 = document.querySelector('#spot9');
     const newGameButton = document.querySelector('#newGameButton');
     const form = document.querySelector('.newGame')
+    const subtitle = document.querySelector('.subtitle');
     spot1.addEventListener('click', () => {
         if (isEven(roundsPlayed.length) == true && !spot1.textContent) {
             spot1.textContent = playerOne.playerMarker;
             let move = 'x spot 1';
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot1.textContent) {
             spot1.textContent = playerTwo.playerMarker;;
             let move = `o spot 1`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     spot2.addEventListener('click', () => {
@@ -42,12 +45,12 @@ const renderGameBoard = (() => {
             spot2.textContent = playerOne.playerMarker;
             let move = `x spot 2`;
             roundsPlayed.push(move);
-            console.log(roundsPlayed.length)
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot2.textContent) {
             spot2.textContent = playerTwo.playerMarker;;
             let move = `o spot 2`;
             roundsPlayed.push(move); 
-            console.log(roundsPlayed.length)
+            gameWon()
         }
     });
     spot3.addEventListener('click', () => {
@@ -55,10 +58,12 @@ const renderGameBoard = (() => {
             spot3.textContent = playerOne.playerMarker;
             let move = `x spot 3`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot3.textContent) {
             spot3.textContent = playerTwo.playerMarker;;
             let move = `o spot 3`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     spot4.addEventListener('click', () => {
@@ -66,10 +71,12 @@ const renderGameBoard = (() => {
             spot4.textContent = playerOne.playerMarker;
             let move = `x spot 4`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot4.textContent) {
             spot4.textContent = playerTwo.playerMarker;;
             let move = `o spot 4`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     spot5.addEventListener('click', () => {
@@ -77,10 +84,12 @@ const renderGameBoard = (() => {
             spot5.textContent = playerOne.playerMarker;
             let move = `x spot 5`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot5.textContent) {
             spot5.textContent = playerTwo.playerMarker;;
             let move = `o spot 5`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     spot6.addEventListener('click', () => {
@@ -88,10 +97,12 @@ const renderGameBoard = (() => {
             spot6.textContent = playerOne.playerMarker;
             let move = `x spot 6`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot6.textContent) {
             spot6.textContent = playerTwo.playerMarker;;
             let move = `o spot 6`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     spot7.addEventListener('click', () => {
@@ -99,10 +110,12 @@ const renderGameBoard = (() => {
             spot7.textContent = playerOne.playerMarker;
             let move = `x spot 7`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot7.textContent) {
             spot7.textContent = playerTwo.playerMarker;;
             let move = `o spot 7`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     spot8.addEventListener('click', () => {
@@ -110,6 +123,7 @@ const renderGameBoard = (() => {
             spot8.textContent = playerOne.playerMarker;
             let move = `x spot 8`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot8.textContent) {
             spot8.textContent = playerTwo.playerMarker;;
             let move = `o spot 8`;
@@ -121,13 +135,86 @@ const renderGameBoard = (() => {
             spot9.textContent = playerOne.playerMarker;
             let move = `x spot 9`;
             roundsPlayed.push(move);
+            gameWon()
         } else if (isOdd(roundsPlayed.length) == true && !spot9.textContent) {
             spot9.textContent = playerTwo.playerMarker;;
             let move = `o spot 9`;
             roundsPlayed.push(move); 
+            gameWon()
         }
     });
     newGameButton.addEventListener('click', () => {
         form.style.display = 'block'
     })
+    function gameWon() {
+        // checks top row for wins 
+        if(spot1.textContent == playerOne.playerMarker && spot2.textContent == playerOne.playerMarker && spot3.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot1.textContent == playerTwo.playerMarker && spot2.textContent == playerTwo.playerMarker && spot3.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            // checks second row for win
+        }else if(spot4.textContent == playerOne.playerMarker && spot5.textContent == playerOne.playerMarker && spot6.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot4.textContent == playerTwo.playerMarker && spot5.textContent == playerTwo.playerMarker && spot6.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            //checks bottom row for win
+        } else if(spot7.textContent == playerOne.playerMarker && spot8.textContent == playerOne.playerMarker && spot9.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot7.textContent == playerTwo.playerMarker && spot8.textContent == playerTwo.playerMarker && spot9.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            //1st column for win
+        } else if(spot1.textContent == playerOne.playerMarker && spot4.textContent == playerOne.playerMarker && spot7.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot1.textContent == playerTwo.playerMarker && spot4.textContent == playerTwo.playerMarker && spot7.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            // checks 2nd column for win
+        } else if(spot2.textContent == playerOne.playerMarker && spot5.textContent == playerOne.playerMarker && spot8.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot2.textContent == playerTwo.playerMarker && spot5.textContent == playerTwo.playerMarker && spot8.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            //checks last column for win
+        } else if(spot3.textContent == playerOne.playerMarker && spot6.textContent == playerOne.playerMarker && spot9.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot3.textContent == playerTwo.playerMarker && spot6.textContent == playerTwo.playerMarker && spot9.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            //checks diagonal top left for wins
+        } else if(spot1.textContent == playerOne.playerMarker && spot5.textContent == playerOne.playerMarker && spot9.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot1.textContent == playerTwo.playerMarker && spot5.textContent == playerTwo.playerMarker && spot9.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+            //checks diagonal top right for win
+        } else if(spot3.textContent == playerOne.playerMarker && spot5.textContent == playerOne.playerMarker && spot7.textContent == playerOne.playerMarker) {
+            subtitle.textContent = `${playerOne.currentPlayerName} you won!`
+            clearBoard()
+        } else if (spot3.textContent == playerTwo.playerMarker && spot5.textContent == playerTwo.playerMarker && spot7.textContent == playerTwo.playerMarker) {
+            subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
+            clearBoard()
+        }
+    }
+    function clearBoard() {
+        spot1.textContent = ''
+        spot2.textContent = ''
+        spot3.textContent = ''
+        spot4.textContent = ''
+        spot5.textContent = ''
+        spot6.textContent = ''
+        spot7.textContent = ''
+        spot8.textContent = ''
+        spot9.textContent = ''
+        roundsPlayed = [];
+    }
 })();
