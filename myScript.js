@@ -5,6 +5,19 @@ const player = (playerName, marker) => {
 }
 
 const renderGameBoard = (() => {
+    let players = [];
+     const submitButton = document.querySelector('#submitButton');
+     
+     submitButton.addEventListener('click', () => {
+     let playerOneInput = document.querySelector('#playerOne');
+     let playerTwoInput = document.querySelector('#playerTwo'); 
+     let playerOneName = playerOneInput.value;  
+     let playerTwoName = playerTwoInput.value;
+     players.push(playerOneName)
+     players.push(playerTwoName)
+     console.log(playerOneName);
+     })
+  
     function isEven(n) {
         return n % 2 == 0;
      }
@@ -12,9 +25,10 @@ const renderGameBoard = (() => {
      function isOdd(n) {
         return Math.abs(n % 2) == 1;
      }
+     
     let roundsPlayed = []
-    const playerOne = player('Dae', 'X');
-    const playerTwo = player('Jaden', 'O');
+    const playerOne = player(players[0], 'X');
+    const playerTwo = player(players[1], 'O');
     const spot1 = document.querySelector('#spot1');
     const spot2 = document.querySelector('#spot2');
     const spot3 = document.querySelector('#spot3');
