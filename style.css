@@ -60,3 +60,9 @@ input {
 .formHead {
     padding-top: 25px;
 }
+#newGameButton {
+    background-color: #d582a8;
+    padding: 10px;
+    font-size: large; 
+    margin-top: 10px;
+}
