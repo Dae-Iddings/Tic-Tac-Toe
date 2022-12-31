@@ -144,6 +144,7 @@ submitButton.addEventListener('click', () => {
                 spot8.textContent = playerTwo.playerMarker;;
                 let move = `o spot 8`;
                 roundsPlayed.push(move);
+                gameWon();
             }
         });
         spot9.addEventListener('click', () => {
@@ -213,9 +214,9 @@ submitButton.addEventListener('click', () => {
                 spot8.textContent == playerOne.playerMarker) {
                 subtitle.textContent = `${playerOne.currentPlayerName} you won!`
                 clearBoard()
-            } else if (spot2.textContent == playerTwo.playerMarker &&
-                spot5.textContent == playerTwo.playerMarker &&
-                spot8.textContent == playerTwo.playerMarker) {
+            } else if (spot2.textContent == 'O' &&
+                spot5.textContent == 'O' &&
+                spot8.textContent == 'O') {
                 subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
                 clearBoard()
                 //checks last column for win
