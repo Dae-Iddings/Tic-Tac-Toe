@@ -3,9 +3,8 @@ const player = (playerName, marker) => {
     let playerMarker = marker;
     return { currentPlayerName, playerMarker }
 }
-
-const renderGameBoard = (() => {
-    let players = [];
+const form = document.querySelector('.newGame')
+let players = [];
      const submitButton = document.querySelector('#submitButton');
      
      submitButton.addEventListener('click', () => {
@@ -17,8 +16,10 @@ const renderGameBoard = (() => {
      players.push(playerTwoName)
      console.log(playerOneName);
      form.style.display = 'none'
-     })
-  
+     
+const renderGameBoard = (() => {
+    
+     console.log(players)
     function isEven(n) {
         return n % 2 == 0;
      }
@@ -40,7 +41,7 @@ const renderGameBoard = (() => {
     const spot8 = document.querySelector('#spot8');
     const spot9 = document.querySelector('#spot9');
     const newGameButton = document.querySelector('#newGameButton');
-    const form = document.querySelector('.newGame')
+    
     const subtitle = document.querySelector('.subtitle');
     spot1.addEventListener('click', () => {
         if (isEven(roundsPlayed.length) == true && !spot1.textContent) {
@@ -233,3 +234,4 @@ const renderGameBoard = (() => {
         roundsPlayed = [];
     }
 })();
+})
