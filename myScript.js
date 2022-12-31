@@ -160,7 +160,7 @@ const renderGameBoard = (() => {
         }
     });
     newGameButton.addEventListener('click', () => {
-        form.style.display = 'block'
+        clearBoard();
     })
     function gameWon() {
         // checks top row for wins 
@@ -219,6 +219,18 @@ const renderGameBoard = (() => {
         } else if (spot3.textContent == playerTwo.playerMarker && spot5.textContent == playerTwo.playerMarker && spot7.textContent == playerTwo.playerMarker) {
             subtitle.textContent = `${playerTwo.currentPlayerName} you won!`
             clearBoard()
+            //checks for tie
+        } else if ((spot1.textContent.includes('X') || spot1.textContent.includes('O')) && 
+        (spot2.textContent.includes('X') || spot2.textContent.includes('O')) && 
+        (spot3.textContent.includes('X') || spot3.textContent.includes('O')) && 
+        (spot4.textContent.includes('X') || spot4.textContent.includes('O')) && 
+        (spot5.textContent.includes('X') || spot5.textContent.includes('O')) && 
+        (spot6.textContent.includes('X') || spot6.textContent.includes('O')) && 
+        (spot7.textContent.includes('X') || spot7.textContent.includes('O')) && 
+        (spot8.textContent.includes('X') || spot8.textContent.includes('O')) && 
+        (spot9.textContent.includes('X') || spot9.textContent.includes('O'))) {
+            subtitle.textContent = 'You tied!'
+            clearBoard();
         }
     }
     function clearBoard() {
